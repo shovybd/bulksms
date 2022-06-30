@@ -1,0 +1,13 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.balance-div {
+  padding-top: 40px;
+form{
+  .multiselect-checkbox{
+    display: flex;
+  }
+}
+
+}
+

@@ -1,0 +1,9 @@
+@use 'custom';
+@use 'sections/navbar';
+@use 'sections/login';
+@use 'sections/verification';
+@use 'sections/dashboard';
+@use 'sections/masterDashboard';
+@use 'sections/forget';
+@use 'sections/footer';
+/*# sourceMappingURL=style.css.map */

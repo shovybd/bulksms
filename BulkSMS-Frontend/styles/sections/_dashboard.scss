@@ -1,0 +1,109 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.dashboard-section {
+  padding-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  .card {
+    height: 211px;
+    .card-body {
+      margin-top: 13px;
+      padding-left: 30px;
+      padding-right: 30px;
+      .card-headings {
+        margin-left: 20px;
+        .dashed-border {
+          border: 1px dashed #091941;
+        }
+      }
+      .card-section-2 {
+        margin-top: 17px;
+        margin-right: 2.5%;
+        h5 {
+          margin-left: 10px;
+        }
+        .account-code {
+          margin-left: 10px;
+        }
+        .success-sms {
+          margin-left: 0;
+          background-color: $secondary;
+        }
+        .faild-sms {
+          background-color: #ff025d;
+        }
+        .success-sms,
+        .faild-sms {
+          padding: 5px 9px;
+          border-radius: 5px;
+          color: $white;
+        }
+      }
+      h5 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 7px;
+      }
+      p {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+      }
+      h6 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-section {
+    .card {
+      height: 252px;
+      .card-body {
+        margin-top: 9px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 24px;
+        .card-headings {
+          margin-left: 13px;
+          .dashed-border {
+            border: 1px dashed #091941;
+          }
+        }
+        .card-section-2 {
+          margin-top: 9px;
+
+          div {
+            border: 0 !important;
+          }
+
+          .account-code {
+            margin-left: 10px;
+            // &:nth-child(3) {
+            //   margin-left: 0px;
+            // }
+          }
+        }
+        h5 {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 19px;
+          margin-bottom: 4px;
+        }
+        h6 {
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 18px;
+        }
+      }
+    }
+    .second-card {
+      height: 265px;
+    }
+  }
+}

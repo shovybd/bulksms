@@ -1,0 +1,7 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.payment-section {
+    padding-top: 40px;
+  @include globalCard(54%, 100%, 100%, 100%);
+}

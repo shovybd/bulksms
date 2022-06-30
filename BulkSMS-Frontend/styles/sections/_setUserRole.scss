@@ -1,0 +1,56 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.set-user-role-section {
+  padding-top: 60px;
+  @include globalCard(540px, 100%, 540px, 540px);
+  .card-div {
+    .wrapper {
+      form {
+        margin-bottom: 38px;
+        .user-info {
+          h6 {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 0;
+          }
+          p {
+            font-size: 14px;
+            line-height: 19px;
+          }
+          h6,
+          p {
+            color: #444444;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+.setuserRole-list-section {
+  padding-top: 60px;
+  @include globalCard(1036px, 1020px, 1020px, 1036px);
+  .card-div {
+    .wrapper {
+      border: 0;
+      margin-left: 2%;
+      margin-right: 2%;
+      form {
+        margin: 0;
+        padding: 0;
+
+        @include tableStyle(
+          207px !important,
+          15px 15px 15px 20px,
+          16px 0px 0px 20px,
+          50px
+        );
+        #child-table-section {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

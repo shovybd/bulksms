@@ -1,0 +1,2 @@
+@use 'custom';@use 'sections/navbar';@use 'sections/login';@use 'sections/verification';@use 'sections/masterDashboard';@use 'sections/createCampaign';@use 'sections/createCompany';@use 'sections/createRoute';@use 'sections/createUser';@use 'sections/companyList';@use 'sections/userProfile';@use 'sections/payment';@use 'sections/notFound';@use 'sections/forget';@use 'sections/footer'
+/*# sourceMappingURL=style.min.css.map */

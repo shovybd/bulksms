@@ -1,0 +1,444 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.navbar {
+  background-color: $bodyColor;
+  @include serchInputBox(
+    217px,
+    34px,
+    14px,
+    19px,
+    2px solid $borderColor,
+    11px 10px,
+    17px 11px 17px 36px,
+    17px 11px 17px 36px,
+    11px 10px,
+    217px,
+    34px
+  );
+  .input-search {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .nav-item {
+    margin-left: 20px;
+    //margin-top: 5px;
+  }
+  .profile-div {
+    margin-right: 10px;
+
+    img {
+      width: 44px;
+      height: 44px;
+    }
+  }
+  .master-page-brand {
+    margin-top: 5px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 26px;
+  }
+
+  .switch input {
+    border: 1px solid #ebebeb;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #ebebeb;
+    //background-color: red;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: -4px;
+    bottom: -1px;
+    background-color: $white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    border: 1px solid #ebebeb;
+    //background-color: #F7F8FA;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+    background-color: $orangeColor;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 20px;
+    // background-color: red;
+  }
+
+  .slider.round::before {
+    border-radius: 20px;
+    // background-color: red;
+  }
+  .navbar-collapse {
+    margin-right: 0;
+  }
+  .navbar-toggler:focus,
+  .navbar-toggler:active,
+  .navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .navbar-toggler {
+    border: 0 !important;
+    margin-left: 10px;
+  }
+
+  .navbar-toggler.collapsed {
+    .navbar-toggler-icon {
+      background-image: url("/images/list.svg");
+      background-repeat: no-repeat;
+      display: block;
+      height: 14px;
+      width: 20px;
+    }
+  }
+  .navbar-toggler:not(.collapsed) {
+    .navbar-toggler-icon {
+      background-image: url("/images/cross.svg");
+      background-repeat: no-repeat;
+      display: block;
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  .navbar-toggler-div {
+    height: 40px;
+    padding-top: 10px;
+  }
+
+  
+}
+
+.menu {
+  transition: all 0.5s ease;
+  height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sms-balance {
+  padding-top: 8px;
+  height: 53px;
+}
+.show-balance-input {
+  border: 2px solid $borderColor;
+  height: 29px;
+  width: 186px;
+  p {
+    font-size: 14px;
+  }
+  .balance-text {
+    height: 14px;
+    width: 59px;
+    border-radius: 20px;
+    background-color: #0c0c0c;
+  }
+
+  span {
+    width: 49px;
+    font-weight: normal;
+    font-size: 11px;
+  }
+}
+
+.progress {
+  height: 6px;
+  background-color: #c5c7d3;
+  .progress-bar {
+    border-radius: 20px;
+    background-color: #858585;
+    height: 6px;
+  }
+}
+
+.percent-text {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.btn,
+.form-select,
+input {
+  font-size: 14px;
+  line-height: 19px;
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.dropdown {
+  .dropdown-toggle::after {
+    border-top: 0;
+    content: url(/images/PLUS.svg);
+    margin-top: 8px;
+  }
+  .dropdown-toggle[aria-expanded="true"] {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(39%) saturate(4097%)
+      hue-rotate(356deg) brightness(101%) contrast(103%);
+  }
+  .dropdown-menu {
+    z-index: 1060px;
+    width: 228px;
+    &:before {
+      position: absolute;
+      top: -10px;
+      right: 7px;
+      display: inline-block;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #ccc;
+      border-left: 10px solid transparent;
+      border-bottom-color: rgba(0, 0, 0, 0.2);
+      content: "";
+    }
+    &:after {
+      position: absolute;
+      top: -9px;
+      right: 8px;
+      display: inline-block;
+      border-right: 9px solid transparent;
+      border-bottom: 9px solid #ffffff;
+      border-left: 9px solid transparent;
+      content: "";
+    }
+
+    .dropdown-item {
+      height: 42px;
+      font-size: 14px;
+      line-height: 19px;
+      font-weight: 400;
+      padding: 11px 12px 12px 21px;
+      border-bottom: 1px solid #ebebeb;
+      &:last-child {
+        padding-bottom: 17px;
+        border-bottom: 0;
+      }
+
+      img {
+        margin-bottom: 13px;
+        margin-top: 13px;
+        padding: 5px;
+      }
+      span {
+        margin-left: 14px;
+      }
+      &:hover {
+        color: $white;
+        background-color: $orangeColor;
+        img {
+          filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+            saturate(0%) hue-rotate(283deg) brightness(103%) contrast(103%);
+        }
+      }
+    }
+    .active-link {
+      color: $white;
+      background-color: $orangeColor;
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+          saturate(0%) hue-rotate(283deg) brightness(103%) contrast(103%);
+      }
+    }
+  }
+}
+
+.profile-div {
+  .dropdown {
+    .dropdown-menu {
+      .dropdown-item {
+        height: 39px;
+      }
+      .user-info {
+        height: 67px;
+        border-bottom: 1px solid #ebebeb;
+        h6 {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+          margin-bottom: 0;
+        }
+        p {
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+.navbar-collapse {
+  margin-right: 6px;
+}
+
+#navbar2 {
+  height: 54px;
+  .navbar-brand {
+    @include brandTextStyle(300, 22px, 30px, -0.02em);
+  }
+}
+#navbar3 {
+  height: 40px;
+  .navbar-brand {
+    @include brandTextStyle(300, 13px, 18px, 0);
+    .brand-text-span {
+      margin-left: 5px;
+    }
+  }
+}
+#smsHistoryNavbar01 {
+  height: 170px;
+}
+#smsHistoryNavbar02 {
+  height: 130px;
+  width: 100%;
+  background-color: white;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    background-color: $white;
+    @include serchInputBox(
+      16px,
+      16px,
+      13px,
+      18px,
+      none,
+      22px,
+      17px 40px 17px 0px,
+      8px 17px 8px 42px,
+      17px 8px,
+      181px,
+      30px
+    );
+    .input-search {
+      margin-left: 0px;
+      margin-right: -2px;
+    }
+    .notification {
+      .nav-item {
+        margin-left: 7px;
+        width: 16px;
+        height: 18px;
+      }
+    }
+    .navbar-toggler-div {
+      padding-top: 0;
+    }
+  }
+  #navbar2 {
+    height: 54px;
+    .navbar-brand {
+      @include brandTextStyle(300, 16px, 22px, -0.02em);
+    }
+  }
+
+  .dropdown {
+    .nav-item {
+      margin-left: 7px;
+    }
+    .dropdown-toggle::after {
+      content: url(/images/PLUS.svg);
+      transform: scale(0.7);
+    }
+  }
+
+  #smsHistoryNavbar01 {
+    height: 40px;
+    width: 100%;
+  }
+
+  #smsHistoryNavbar02 {
+    height: 60vh;
+    width: 100%;
+    border: 0 !important;
+  }
+}
+
+// .navbar-collapse.collapse.show {
+//   overflow-y: auto;
+//   background-color: red;
+// }
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .navbar {
+    
+    .balance-text-1,
+    .balance-text-2 {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .balance-text-1 {
+      color: $orangeColor;
+    }
+    .balance-text-2 {
+      color: $secondary;
+    }
+
+    @include serchInputBox(
+      181px,
+      30px,
+      13px,
+      18px,
+      2px solid $borderColor,
+      17px 8px,
+      8px 17px 8px 42px,
+      8px 17px 8px 42px,
+      17px 8px,
+      181px,
+      30px
+    );
+
+    .nav-item {
+      margin-left: 15px;
+    }
+    .profile-div {
+      margin-right: 0px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  #navbar2 {
+    height: 54px;
+    .navbar-brand {
+      @include brandTextStyle(300, 18px, 25px, -0.02em);
+    }
+  }
+}

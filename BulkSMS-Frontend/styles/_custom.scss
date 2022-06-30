@@ -1,0 +1,37 @@
+//theme colors
+$blue-dark: #0d193f;
+$blue-light: #61d2d2;
+$footerColor: #0b1833;
+$orangeColor: #ff9704;
+$chooseFileColor: #f9f9f9;
+$bodyColor: #f7f8fa;
+$borderColor: #ebebeb;
+$loginTitleColor: #091941;
+$placeholderColor: #858585;
+$labelColor: #444444;
+$redColor: #ff025d;
+
+//white and gray colors
+$white: #ffffff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #3c3e44;
+$gray-900: #212529;
+
+$black: #000;
+
+//colors
+$primary: $blue-dark;
+$secondary: $blue-light;
+
+//text size
+$primaryFontSize: 14px;
+$primaryLineHeight: 19px;
+
+//import bootstrap 5
+@import "~bootstrap/scss/bootstrap.scss";

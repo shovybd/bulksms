@@ -1,0 +1,6 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.create-company-section{
+    @include globalCard(54%,100%,64%,64%);
+}

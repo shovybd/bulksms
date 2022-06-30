@@ -1,0 +1,126 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.sms-history-section {
+  .sms-history-nav-children {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+    margin-top: 12px;
+  }
+  .navbar-toggler-text,
+  .sms-history-text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .sms-history-text {
+    margin: 0px 0px 0px 20px;
+    padding: 0;
+  }
+  @include calenderStyle(
+    400,
+    absolute !important,
+    13px !important,
+    18px !important,
+    1
+  );
+
+  .sms-history-input-group {
+    border: 1px solid #ebebeb;
+    border-radius: 16px;
+    input {
+      height: 34px;
+      &::placeholder {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+      }
+    }
+    .input-group-text {
+      border-radius: 16px;
+      height: 34px;
+      border: 0;
+      border-right: 1px solid #ebebeb;
+      background-color: #f9f9f9;
+    }
+  }
+  .sms-history-input-group-2 {
+    @include inputGroup(13px, 18px);
+  }
+
+  select {
+    height: 34px;
+    font-size: 13px;
+    line-height: 18px;
+    border-radius: 16px;
+    border: 1px solid #ebebeb;
+    &::placeholder {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 18px;
+      color: $labelColor;
+    }
+    &:focus,
+    &:active {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  .form-select {
+    background-image: url("/images/history/dropdown.svg");
+    font-weight: 400 !important;
+    color: $labelColor !important;
+  }
+
+  .sms-history-main-section {
+    margin-top: 220px;
+    .sms-history-table-div {
+      @include globalCard(100%, 1339px, 1339px, 1339px);
+      .card-div {
+        .wrapper {
+          margin-left: 20px;
+          margin-right: 21px;
+          form {
+            @include serchInputBox(
+              217px,
+              34px,
+              14px,
+              19px,
+              2px solid $borderColor,
+              11px 10px,
+              17px 11px 17px 36px,
+              17px 11px 17px 36px,
+              11px 10px,
+              217px,
+              34px
+            );
+            .input-search {
+              margin-left: 2px;
+              margin-right: 2px;
+            }
+            @include showEntries(0px, white);
+            .show-entries{
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .sms-history-section {
+    .input-group,
+    select {
+      width: 209px;
+    }
+    select {
+      margin: 0;
+    }
+    .sms-history-main-section {
+      margin-top: 80px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use "../custom" as *;
+@use "mixins" as *;
+
+.submit-btn {
+  @include buttonStyle(103px, $secondary, $white, 0, 78px);
+}
+.register-user-btn {
+  @include buttonStyle(109px, $secondary, $white, 0, 78px);
+}
+.draft-btn {
+  @include buttonStyle(90px, $labelColor, $white, 0, 58px);
+}
+.telko-btn {
+  @include buttonStyle(93px, $secondary, $white, 0, 58px);
+}
+.company-btn {
+  @include buttonStyle(127px, $labelColor, $white, 0, 93px);
+}
+.send-btn {
+  @include buttonStyle(90px, $secondary, $white, 0, 58px);
+}
+.preview-btn {
+  @include buttonStyle(
+    90px,
+    transparent,
+    $labelColor,
+    1px solid $borderColor,
+    74px
+  );
+}
+
+.company-create-btn {
+  @include buttonStyle(100px, $secondary, $white, 0, 100px);
+}
+
+.update-btn {
+  @include buttonStyle(104px, $secondary, $white, 0, 58px);
+}
+.reset-btn {
+  @include buttonStyle(48px, transparent, $labelColor, 0, 50px);
+  span {
+    border-bottom: 1px solid $labelColor;
+  }
+}
+
+.all-invoice-btn {
+  @include buttonStyle(139px, $primary, $white, 0, 139px);
+}
+.create-invoice-btn {
+  @include buttonStyle(149px, $secondary, $white, 0, 149px);
+}
+.export-btn {
+  @include buttonStyle(121px, $secondary, $white, 0, 121px);
+}
+.sms-report-btn {
+  @include buttonStyle(135px, $secondary, $white, 0, 135px);
+}

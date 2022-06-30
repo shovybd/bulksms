@@ -1,0 +1,95 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.user-profile-section {
+  padding-top: 40px;
+  @include globalCard(40%, 100%, 100%, 100%);
+  form{
+    margin-bottom: 26px;
+    .avatar-upload {
+      position: relative;
+      max-width: 130px;
+      margin: 10px auto;
+    }
+    .avatar-upload .avatar-edit {
+      position: absolute;
+      right: -10px;
+      z-index: 1;
+      top: 90px;
+    }
+
+    .avatar-upload .avatar-preview {
+      width: 130px;
+      height: 130px;
+      position: relative;
+      border-radius: 100%;
+      border: 1px solid #C5C7D3;
+    }
+    .avatar-upload .avatar-preview > div {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  
+  .modal-title {
+    text-align: center;
+    width: 100%;
+  }
+  .btn-close {
+    float: right !important;
+  }
+  .upload-btn {
+    @include buttonStyle(142px, $secondary, $white, 0, 142px);
+    height: 38px !important;
+    margin-right: 10px;
+    border-radius: 19px;
+  }
+  .use-camera-btn {
+    @include buttonStyle(132px, $labelColor, $white, 0, 132px);
+    height: 38px !important;
+    border-radius: 19px;
+  }
+
+  .modal-content {
+    border-radius: 8px;
+    border: 1px solid $borderColor;
+    .modal-header {
+      border: 0;
+      border-bottom: 1px solid $borderColor;
+      height: 59px;
+      .modal-title {
+        margin-top: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+      .btn-close-div {
+        padding-top: 10px;
+        .btn-close {
+          opacity: 1;
+        }
+      }
+    }
+    .modal-body {
+      p {
+        font-size: 14px;
+        line-height: 19px;
+      }
+      .modal-buttons {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 967px) {
+  .user-profile-section {
+    .use-camera {
+      margin: 10px 10px 0 34px;
+    }
+  }
+}

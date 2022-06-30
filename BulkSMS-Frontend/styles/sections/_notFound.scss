@@ -1,0 +1,40 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+.not-found-section {
+  @include formCard(88%, 236px);
+  h1 {
+    color: $redColor;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 95px;
+  }
+  p {
+    color: $loginTitleColor;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  button {
+    @include buttonStyle(188px, $secondary, $white, 0, 120px);
+    height: 41px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .img-div {
+    position: absolute;
+    right: 16.5%;
+    top: 18.5%;
+  }
+}
+@media only screen and (min-width: 1441px) and (max-width: 2560px) {
+  .not-found-section {
+    @include formCard(100%, 236px);
+  }
+}
+@media only screen and (min-width: 2560px) {
+  .img-div {
+    position: absolute;
+    right: 30% !important;
+    top: 18.5%;
+  }
+}

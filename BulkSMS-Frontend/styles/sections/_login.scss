@@ -1,0 +1,9 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+
+.login-section{
+    @include globalCard(84%,84%,84%,84%);
+    
+}
+ 

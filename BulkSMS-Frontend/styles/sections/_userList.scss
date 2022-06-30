@@ -1,0 +1,23 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.user-list-section {
+  padding-top: 60px;
+  @include globalCard(100%, 1340px, 1340px, 1340px);
+  .card-div {
+    .wrapper {
+      border: 0;
+      margin-left: 20px;
+      margin-right: 20px;
+      form {
+        margin: 0;
+        padding: 0;
+
+        @include tableStyle(172px,15px 15px 15px 20px,16px 0px 0px 20px,117px);
+        #child-table-section {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

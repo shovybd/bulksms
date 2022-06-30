@@ -1,0 +1,9 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.create-campaign-section {
+  @include globalCard(44%, 100%, 64%, 64%);
+  form {
+    padding-bottom: 15px;
+  }
+}

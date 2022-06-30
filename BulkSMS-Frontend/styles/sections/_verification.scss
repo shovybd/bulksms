@@ -1,0 +1,11 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.verification-section{
+ .card{
+border: 0;
+border: 1px solid $borderColor;
+border-radius: 8px;
+
+  }
+}

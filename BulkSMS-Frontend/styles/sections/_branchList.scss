@@ -1,0 +1,21 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.branch-list-section {
+    @include globalCard(591px, 591px, 591px, 591px);
+    padding-top: 60px;
+    .card-div {
+        .wrapper {
+          border: 0;
+          form {
+            margin: 0;
+            padding: 0;
+    
+            @include tableStyle(172px,15px 15px 15px 30px,16px 0px 0px 30px,50px);
+            #child-table-section {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+}

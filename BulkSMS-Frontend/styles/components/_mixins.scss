@@ -1,0 +1,573 @@
+@use "../custom" as *;
+
+@mixin buttonStyle($width, $bgColor, $fontColor, $border, $tabWidth) {
+  background-color: $bgColor;
+  border: none;
+  border-radius: 20px;
+  font-weight: 400;
+  width: $width;
+  height: 36px;
+  border: $border;
+  color: $fontColor;
+  font-size: $primaryFontSize;
+  line-height: $primaryLineHeight;
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    width: $tabWidth;
+    height: 33px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  @media (max-width: 767px) {
+    width: $tabWidth;
+    height: 28px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@mixin globalCard(
+  $cardWidth,
+  $cardPhoneWidth,
+  $cardTabWidth,
+  $cardLaptopWidth
+) {
+  .card-div {
+    // background-color: $bodyColor;
+    width: $cardWidth;
+
+    .wrapper {
+      margin: auto;
+      width: 100%;
+      background: $white;
+      border: 1px solid $borderColor;
+      box-sizing: border-box;
+      border-radius: 8px;
+      h3 {
+        color: $loginTitleColor;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+      }
+      p {
+        font-size: 14px;
+        line-height: 19px;
+        color: #444444;
+      }
+      .count-text {
+        color: $placeholderColor;
+      }
+      textarea {
+        padding: 20px;
+        border-radius: 20px;
+        height: 106px;
+        resize: none;
+      }
+      input {
+        margin-bottom: 15px;
+        padding: 10px 10px 10px 20px;
+        height: 39px;
+      }
+
+      textarea,
+      input,
+      textarea::placeholder,
+      input::placeholder {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        color: $placeholderColor;
+      }
+      textarea,
+      input {
+        border: 0;
+        border: 2px solid $borderColor;
+        color: $labelColor;
+      }
+      .mobile-input {
+        margin-bottom: 0 !important;
+      }
+      label {
+        font-size: 14px;
+        line-height: 19px;
+        color: $labelColor;
+      }
+      .login-btn {
+        width: 116px;
+        height: 39px;
+        font-size: 14px;
+        line-height: 19px;
+        margin-bottom: 15px;
+      }
+      .or-text {
+        height: 19px;
+      }
+      .social-btn {
+        margin-top: 25px;
+        height: 39px;
+        border: 0;
+        border-radius: 20px;
+        background-color: #f9f9f9;
+      }
+    }
+  }
+
+  @media (max-width: 688px) {
+    .card-div {
+      width: $cardPhoneWidth;
+      .wrapper {
+        .or-text {
+          height: 19px;
+        }
+        .social-btn {
+          margin-top: 15px;
+        }
+        p {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 689px) and (max-width: 991px) {
+    .card-div {
+      width: $cardTabWidth;
+      .wrapper {
+        .social-btn {
+          margin-top: 15px;
+        }
+        p {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1400px) {
+    .card-div {
+      width: $cardLaptopWidth;
+    }
+  }
+}
+
+@mixin formCard($width, $padding) {
+  .card-div {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .wrapper {
+      width: $width;
+      margin-bottom: 50px;
+      background: $white;
+      border: 1px solid $borderColor;
+      box-sizing: border-box;
+      border-radius: 8px;
+      form {
+        padding-top: $padding;
+        padding-bottom: $padding;
+      }
+    }
+  }
+}
+
+//for navbar page
+@mixin serchInputBox(
+  $inputWidth,
+  $inputHeight,
+  $fSize,
+  $lHeight,
+  $outlineBefore,
+  $bgPositionBefore,
+  $inputPadding,
+  $focusPadding,
+  $bgPositionAfter,
+  $focusWidth,
+  $focusHeight
+) {
+  .input-search {
+    width: $inputWidth;
+    height: $inputHeight;
+    position: relative;
+    border-radius: 20px;
+    border: none;
+    font-size: $fSize;
+    line-height: $lHeight;
+    font-weight: 300;
+    outline: $outlineBefore;
+    color: $placeholderColor;
+    background-color: transparent;
+    background-image: url(/images/admin/search.svg);
+    background-position: $bgPositionBefore;
+    background-repeat: no-repeat;
+    padding: $inputPadding;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    &::placeholder {
+      font-size: $fSize;
+      line-height: $lHeight;
+      font-weight: 300;
+      color: $placeholderColor;
+    }
+    &:focus {
+      padding: $focusPadding;
+      background-position: $bgPositionAfter;
+      width: $focusWidth;
+      height: $focusHeight;
+      outline: 2px solid $borderColor !important;
+    }
+  }
+}
+
+//master Dashboard navbar brand
+@mixin brandTextStyle($fweight, $fSize, $lHeight, $lSpacing) {
+  font-weight: $fweight;
+  font-size: $fSize;
+  line-height: $lHeight;
+  letter-spacing: $lSpacing;
+  margin-left: 7px;
+}
+
+@mixin tableStyle(
+  $actionsWidth,
+  $paddingHead,
+  $paddingTableData,
+  $tableDataHeight
+) {
+  .table-card {
+    border: 1px solid rgba(68, 68, 68, 0.1);
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+  }
+  #child-table-section {
+    border-spacing: 0 !important;
+    border-collapse: separate;
+    thead {
+      background-color: rgba(97, 210, 210, 0.1);
+      height: 48px;
+      th {
+        color: #444444;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 18px;
+        padding: $paddingHead;
+        border-right: 1px solid rgba(68, 68, 68, 0.1);
+        border-top: medium none;
+
+        &:first-child {
+          border-radius: 8px 0 0 0;
+          -moz-border-radius: 8px 0 0 0;
+          -webkit-border-radius: 8px 0 0 0;
+          border-left: medium none;
+        }
+        &:last-child {
+          border-radius: 0 8px 0 0;
+          border-right: 0;
+          -moz-border-radius: 0 8px 0 0;
+          -webkit-border-radius: 0 8px 0 0;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        height: $tableDataHeight;
+        border: 1px solid rgba(68, 68, 68, 0.1);
+        &:last-child {
+          border-bottom: 0;
+        }
+        td {
+          height: $tableDataHeight;
+          padding: $paddingTableData;
+          font-weight: 400px;
+          font-size: 13px;
+          line-height: 18px;
+          border-right: 1px solid rgba(68, 68, 68, 0.1);
+          border-top: 1px solid rgba(68, 68, 68, 0.1);
+          &:first-child {
+            border-left: medium none;
+          }
+          &:last-child {
+            border-right: 0;
+          }
+        }
+        .name-data {
+          width: 219px;
+        }
+        .address-data {
+          width: 358px;
+          padding-right: 39px;
+        }
+        .contact-data {
+          width: 156px;
+          padding-right: 21px;
+        }
+        .options-data {
+          width: $actionsWidth;
+          p {
+            margin-left: 5px;
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: 400;
+            color: #444444;
+          }
+          .edit-option {
+            margin-right: 16px;
+            cursor: pointer;
+            &:hover {
+              img {
+                filter: brightness(0) saturate(100%) invert(92%) sepia(15%)
+                  saturate(940%) hue-rotate(126deg) brightness(91%)
+                  contrast(84%);
+              }
+            }
+          }
+          .delete-option {
+            cursor: pointer;
+            &:hover {
+              img {
+                filter: brightness(0) saturate(100%) invert(15%) sepia(85%)
+                  saturate(7487%) hue-rotate(333deg) brightness(101%)
+                  contrast(101%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .table-hover tbody tr:hover td,
+  .table-hover tbody tr:hover th {
+    --bs-table-hover-bg: rgba(249, 249, 249, 0.3);
+  }
+}
+
+@mixin sidebarStyle(
+  $sidebarWidth,
+  $sidebarBgColor,
+  $menuListMarginBottom,
+  $menuItemBgColor,
+  $menuIconBorder,
+  $menuIconWidth,
+  $menuIconFilter,
+  $menuItemPadding,
+  $menuItemHeight,
+  $menuItemMargin,
+  $menuItemHoverBgColor,
+  $menuIconHoverBorder,
+  $menuIconHoverWidth,
+  $menuIconHoverFilter,
+  $menuIconBorderLeft,
+  $menuItemWidth,
+  $activeLinkMarginBottom
+) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: $sidebarWidth;
+  background: $sidebarBgColor;
+  transition: all 0.5s ease;
+  // overflow-y: auto;
+  .logo-details {
+    height: 66px;
+    display: flex;
+    align-items: center;
+  }
+  .main-menu {
+    padding-top: 13px;
+    .menu-list {
+      margin-bottom: $menuListMarginBottom;
+    }
+  }
+  .active-link {
+    margin: $activeLinkMarginBottom;
+    .menu-item {
+      background-color: $menuItemBgColor;
+      .menu-icon {
+        align-items: center;
+        border-left: $menuIconBorder;
+        width: $menuIconWidth;
+        img {
+          filter: $menuIconFilter;
+        }
+      }
+    }
+  }
+
+  .menu-item {
+    border-radius: 8px;
+    padding-left: $menuItemPadding;
+    height: $menuItemHeight;
+    align-items: center;
+    margin: $menuItemMargin;
+    width: $menuItemWidth;
+    .menu-icon {
+      border-left: $menuIconBorderLeft;
+      width: $menuIconWidth;
+    }
+
+    &:hover {
+      background-color: $menuItemHoverBgColor;
+      .menu-icon {
+        border-left: $menuIconHoverBorder;
+        width: $menuIconHoverWidth;
+        img {
+          filter: $menuIconHoverFilter;
+        }
+      }
+    }
+  }
+  .menu-links {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    span {
+      color: white;
+      margin-left: 10%;
+      opacity: 1;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.5s ease;
+    }
+  }
+
+  .side-menu-footer {
+    width: $sidebarWidth;
+    height: 60px;
+    background-color: #444444;
+    transition: all 0.5s ease-in-out;
+    span {
+      height: 100%;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+@mixin calenderStyle($fWeight, $rdtPickerPosition, $fSize, $lheight, $zIndex) {
+  label {
+    cursor: pointer;
+    input {
+      font-weight: $fWeight;
+      font-size: $fSize;
+      line-height: $lheight;
+      color: #091941;
+      &:focus,
+      &:active {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    }
+    .form-control:focus {
+      border: 1px solid #ebebeb;
+    }
+
+    .rdtPicker {
+      position: $rdtPickerPosition;
+      z-index: $zIndex;
+      margin-left: 20px;
+      th {
+        color: $labelColor;
+        font-weight: 500;
+      }
+      th:hover,
+      td:hover {
+        background-color: $borderColor !important;
+      }
+      td.rdtActive,
+      td.rdtActive:hover {
+        background-color: $orangeColor !important;
+      }
+      td.rdtOld,
+      .rdtPicker td.rdtNew {
+        color: $placeholderColor !important;
+      }
+      td.rdtActive.rdtToday:before {
+        border-bottom-color: #fff !important;
+      }
+
+      td.rdtToday:before {
+        border-bottom: 7px solid $orangeColor !important;
+      }
+      .rdtCounter .rdtCount {
+        height: auto !important;
+      }
+      .rdtCounterSeparator {
+        line-height: 110px !important;
+      }
+    }
+  }
+}
+
+@mixin inputGroup($fSize, $lheight) {
+  input,
+  .input-group-text {
+    height: 34px;
+    border: 1px solid #ebebeb;
+  }
+  div {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    background-color: $chooseFileColor;
+  }
+  input {
+    // width: $Width;
+    font-weight: 400;
+    font-size: $fSize;
+    line-height: $lheight;
+    color: $labelColor;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    &::placeholder {
+      font-weight: 400;
+      font-size: $fSize;
+      line-height: $lheight;
+      color: $labelColor;
+    }
+    &:focus,
+    &:active {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+@mixin showEntries ($bRadius, $bgColor){
+  .show-entries {
+    margin-bottom: 12px;
+  }
+  .form-select-2 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    &::-ms-expand {
+      display: none;
+    }
+    margin-left: 7px;
+    margin-right: 7px;
+    width: 60px;
+    height: 25px;
+    background: $bgColor;
+    background-image: url(/images/dropdownarrow2.svg);
+    background-repeat: no-repeat;
+    background-position: right 11px center;
+    padding-left: 12px;
+    border: 1px solid #ebebeb;
+    color: $labelColor;
+    font-size: 13px;
+    line-height: 18px;
+    border-radius:$bRadius;
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}

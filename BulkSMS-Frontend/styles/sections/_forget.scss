@@ -1,0 +1,15 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.forget-section{
+    
+    @include globalCard(50%,50%,50%,50%);
+    .btn-1{
+        width: 183px;
+        height: 39px;
+        font-size: 14px;
+        line-height: 19px;
+        margin-bottom: 15px;
+    }
+}
+   
